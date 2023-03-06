@@ -7,7 +7,7 @@ const closeButton = document.querySelector('#closeButton')
 let score = 0
 let hlCircleNumber = 0
 let timer
-let pace = 1000
+let pace = 1300
 let missedRounds = 0
 
 function startGame () {

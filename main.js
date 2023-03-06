@@ -56,7 +56,7 @@ function startGame () {
 
 function stopGame () {
   const closeButton = document.querySelector('#closeButton')
-  hlCircleNumber = 0 // to cut the possibilty of proceeding game and getting points
+  hlCircleNumber = 0 // to cut the possibility of proceeding game and getting points
 
   function modalShow () {
     document.querySelector('.overlay').classList.toggle('visible')

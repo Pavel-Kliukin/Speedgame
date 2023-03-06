@@ -9,6 +9,7 @@ let hlCircleNumber = 0
 let timer
 let pace = 1300
 let missedRounds = 0
+let wasAlreadyClicked = false // this variable is for avoid get multiple points for multiple clicking on same highlighted circle
 
 function startGame () {
   startButton.classList.add('hidenButton')
@@ -16,6 +17,7 @@ function startGame () {
   scoreIs.textContent = 0
 
   function newRound (hlCircle) {
+    wasAlreadyClicked = false
     if (missedRounds >= 4) {
       return stopGame()
     }
@@ -39,9 +41,12 @@ function startGame () {
 
   function circleClicked (i) {
     if (i === hlCircleNumber) {
-      score += 1
-      missedRounds = 0
-      scoreIs.textContent = score
+      if (!wasAlreadyClicked) {
+        score += 1
+        missedRounds = 0
+        scoreIs.textContent = score
+        wasAlreadyClicked = true
+      }
     } else {
       stopGame()
     }

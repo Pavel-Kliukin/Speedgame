@@ -19,8 +19,8 @@ function startGame () {
     if (missedRounds >= 4) {
       return stopGame()
     }
-    timer = setTimeout(highliteCircle, pace)
-    setTimeout(() => hlCircle.classList.remove('highlighted'), pace)
+    timer = setTimeout(highliteCircle, pace) // here we add the highlight to circle
+    setTimeout(() => hlCircle.classList.remove('highlighted'), pace) // here we remove the highlight from the circle
     pace -= 10
     missedRounds++
   }
